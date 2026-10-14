@@ -10,6 +10,10 @@ import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
+        Page<Employee> findByDepartment(String department, Pageable pageable);
+
+        Page<Employee> findByCountry(String country, Pageable pageable);
+
     Page<Employee> findByDepartmentAndCountry(String department, String country, Pageable pageable);
 
     @Query("select coalesce(sum(employee.salary), 0) from Employee employee")
