@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/analytics")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "${app.cors.allowed-origins}")
 public class AnalyticsController {
 
     private final EmployeeService employeeService;
